@@ -1,8 +1,8 @@
-# 리듬세상 for Android
+# 리듬 세상 for Android
 > 스마트폰 게임 프로그래밍 텀프로젝트
+닌텐도 사의 NDS게임 ['리듬 세상'](https://www.youtube.com/watch?v=FwdBLgFA7qM&t=9s&ab_channel=Japancommercials4U2)의 모방 게임입니다.
 
-한 두 문단으로 프로젝트 소개 글을 작성합니다.
-
+## 게임 컨셉
 ![](../header.png)
 
 ## 설치 방법
