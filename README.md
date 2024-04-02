@@ -28,12 +28,12 @@ _더 많은 예제와 사용법은 [Wiki][wiki]를 참고하세요._
 
 ## 개발 일정
 
-|Header|Description|
+|일자|개발 내용|
 |--|--|
-|Cell1|Cell2|
-|Cell1|Cell2|
-|Cell1|Cell2|
-|Cell1|Cell2|
+|1/04.04-04.10|Cell2|
+[2/04.11-04.17|Cell2|
+|3/04.18-04.24|Cell2|
+|4/04.25-05.01|Cell2|
 
 ```sh
 make install
