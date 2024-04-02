@@ -1,11 +1,12 @@
 # 리듬 세상 for Android
 > 스마트폰 게임 프로그래밍 텀프로젝트
-닌텐도 사의 NDS게임 ['리듬 세상'](https://www.youtube.com/watch?v=FwdBLgFA7qM&t=9s&ab_channel=Japancommercials4U2)의 모방 게임입니다.
+닌텐도 사의 NDS게임 ['리듬 세상'](https://www.youtube.com/watch?v=FwdBLgFA7qM&ab_channel=Japancommercials4U2)의 모방 게임입니다.
 
 ## 게임 컨셉
 ![](../header.png)
 
-## 설치 방법
+## 개발 범위
+게임 타이틀, 게임 로비, 게임 3개
 
 OS X & 리눅스:
 
@@ -19,15 +20,20 @@ npm install my-crazy-module --save
 edit autoexec.bat
 ```
 
-## 사용 예제
+## 예상 게임 실행 흐름
 
 스크린 샷과 코드 예제를 통해 사용 방법을 자세히 설명합니다.
 
 _더 많은 예제와 사용법은 [Wiki][wiki]를 참고하세요._
 
-## 개발 환경 설정
+## 개발 일정
 
-모든 개발 의존성 설치 방법과 자동 테스트 슈트 실행 방법을 운영체제 별로 작성합니다.
+|Header|Description|
+|--|--|
+|Cell1|Cell2|
+|Cell1|Cell2|
+|Cell1|Cell2|
+|Cell1|Cell2|
 
 ```sh
 make install
