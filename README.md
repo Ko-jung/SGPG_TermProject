@@ -1,35 +1,38 @@
 # 리듬 세상 for Android
 > 스마트폰 게임 프로그래밍 텀프로젝트
-닌텐도 사의 NDS게임 ['리듬 세상'](https://www.youtube.com/watch?v=FwdBLgFA7qM&ab_channel=Japancommercials4U2)의 모방 게임입니다.
+닌텐도 사의 DS게임 ['리듬 세상'](https://www.youtube.com/watch?v=FwdBLgFA7qM&ab_channel=Japancommercials4U2)의 모방 게임입니다.
 
 ![](READMEImg/메인이미지.jpg)
 
 ## 게임 컨셉
-![](../header.png)
+모티브 게임: Nintendo DS 리듬세상
+장르: 리듬 게임
+
+타이밍에 맞게 Touch 및 Hold, Slide를 하여 점수를 얻고, 일정 점수 이상이 되어야 클리어되는 방식입니다.
 
 ## 개발 범위
-게임 타이틀
+1. 게임 타이틀
 
 ![](READMEImg/게임타이틀.jpg)
 
-게임 로비
+2. 게임 로비
 
 ![](READMEImg/게임로비.png)
 
 
-게임1: [팬클럽](https://www.youtube.com/watch?v=e90ZA60n7wo&pp=ygUX66as65Os7IS47IOBIO2MrO2BtOufvSA%3D)
+3. 게임1: [팬클럽](https://www.youtube.com/watch?v=e90ZA60n7wo&pp=ygUX66as65Os7IS47IOBIO2MrO2BtOufvSA%3D)
 
 ![](READMEImg/팬클럽.jpg)
 
-게임2: [로봇 공장](https://www.youtube.com/watch?v=p16F9XIyFcU&pp=ygUZ66as65Os7IS47IOBIOuhnOu0h-qzteyepQ%3D%3D)
+4. 게임2: [로봇 공장](https://www.youtube.com/watch?v=p16F9XIyFcU&pp=ygUZ66as65Os7IS47IOBIOuhnOu0h-qzteyepQ%3D%3D)
 
 ![](READMEImg/로봇공장.webp)
 
-게임3: [슈팅](https://www.youtube.com/watch?v=82T71E_IBuQ&pp=ygUT66as65Os7IS47IOBIOyKiO2MhQ%3D%3D)
+5. 게임3: [슈팅](https://www.youtube.com/watch?v=82T71E_IBuQ&pp=ygUT66as65Os7IS47IOBIOyKiO2MhQ%3D%3D)
 
 ![](READMEImg/슈팅.jpg)
 
-사진: [나무위키](https://namu.wiki/w/%EB%A6%AC%EB%93%AC%20%EC%84%B8%EC%83%81/%EC%88%98%EB%A1%9D%20%EA%B2%8C%EC%9E%84)
+>사진: [나무위키](https://namu.wiki/w/%EB%A6%AC%EB%93%AC%20%EC%84%B8%EC%83%81/%EC%88%98%EB%A1%9D%20%EA%B2%8C%EC%9E%84)
 
 
 OS X & 리눅스:
@@ -61,7 +64,7 @@ _더 많은 예제와 사용법은 [Wiki][wiki]를 참고하세요._
 |5주(05.02-05.08)|게임 1 작동 확인|
 |6주(05.09-05.15)|점수 및 랭크 시스템 구현|
 |7주(05.16-05.22)|게임 2 게임 제작|
-|8주(05.23-05.29)|게임 31 게임 제작|
+|8주(05.23-05.29)|게임 3 게임 제작(스크롤링 사용)|
 |9주(05.30-06.05)|테스트 및 버그 수정|
 
 ## 업데이트 내역
