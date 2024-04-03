@@ -6,6 +6,7 @@
 
 ## 게임 컨셉
 모티브 게임: Nintendo DS 리듬세상
+
 장르: 리듬 게임
 
 타이밍에 맞게 Touch 및 Hold, Slide를 하여 점수를 얻고, 일정 점수 이상이 되어야 클리어되는 방식입니다.
@@ -32,7 +33,7 @@
 
 ![](READMEImg/슈팅.jpg)
 
->사진: [나무위키](https://namu.wiki/w/%EB%A6%AC%EB%93%AC%20%EC%84%B8%EC%83%81/%EC%88%98%EB%A1%9D%20%EA%B2%8C%EC%9E%84)
+>사진: [나무위키](https://namu.wiki/w/%EB%A6%AC%EB%93%AC%20%EC%84%B8%EC%83%81/%EC%88%98%EB%A1%9D%20%EA%B2%8C%EC%9E%84) & [타이틀](https://m.blog.naver.com/qkdrnwoddl9/222095456664) & [게임로비](https://www.youtube.com/watch?v=82T71E_IBuQ&pp=ygUT66as65Os7IS47IOBIOyKiO2MhQ%3D%3D)
 
 
 OS X & 리눅스:
