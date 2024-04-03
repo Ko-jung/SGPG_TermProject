@@ -15,28 +15,26 @@
 1. 게임 타이틀
 
 <img src="READMEImg/게임타이틀.jpg" width="400" height="400"/>
-![](READMEImg/게임타이틀.jpg)
 
 2. 게임 로비
 
-![](READMEImg/게임로비.png)
-
+<img src="READMEImg/게임로비.png" width="400" height="400"/>
 
 3. 게임1: [팬클럽](https://www.youtube.com/watch?v=e90ZA60n7wo&pp=ygUX66as65Os7IS47IOBIO2MrO2BtOufvSA%3D)
 
-![](READMEImg/팬클럽.jpg)
+<img src="READMEImg/팬클럽.jpg" width="400" height="400"/>
 
 4. 게임2: [로봇 공장](https://www.youtube.com/watch?v=p16F9XIyFcU&pp=ygUZ66as65Os7IS47IOBIOuhnOu0h-qzteyepQ%3D%3D)
 
-![](READMEImg/로봇공장.webp)
+<img src="READMEImg/로봇공장.webp" width="400" height="400"/>
 
 5. 게임3: [슈팅](https://www.youtube.com/watch?v=82T71E_IBuQ&pp=ygUT66as65Os7IS47IOBIOyKiO2MhQ%3D%3D)
 
-![](READMEImg/슈팅.jpg)
+<img src="READMEImg/슈팅.jpg" width="400" height="400"/>
 
 6. 게임 종료 및 랭크: 예시
 
-![](READMEImg/게임종료.png)
+<img src="READMEImg/게임종료.png" width="400" height="400"/>
 
 >사진: [나무위키](https://namu.wiki/w/%EB%A6%AC%EB%93%AC%20%EC%84%B8%EC%83%81/%EC%88%98%EB%A1%9D%20%EA%B2%8C%EC%9E%84) & [타이틀](https://m.blog.naver.com/qkdrnwoddl9/222095456664) & [게임로비](https://www.youtube.com/watch?v=82T71E_IBuQ&pp=ygUT66as65Os7IS47IOBIOyKiO2MhQ%3D%3D)
 
