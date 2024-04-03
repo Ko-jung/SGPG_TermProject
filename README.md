@@ -2,11 +2,20 @@
 > 스마트폰 게임 프로그래밍 텀프로젝트
 닌텐도 사의 NDS게임 ['리듬 세상'](https://www.youtube.com/watch?v=FwdBLgFA7qM&ab_channel=Japancommercials4U2)의 모방 게임입니다.
 
+![](READMEImg/메인이미지.jpg)
+
 ## 게임 컨셉
 ![](../header.png)
 
 ## 개발 범위
-게임 타이틀, 게임 로비, 게임 3개
+게임 타이틀
+
+![](READMEImg/게임타이틀.jpg)
+
+게임 로비
+
+![](READMEImg/게임로비.png)
+
 
 게임1: [팬클럽](https://www.youtube.com/watch?v=e90ZA60n7wo&pp=ygUX66as65Os7IS47IOBIO2MrO2BtOufvSA%3D)
 
