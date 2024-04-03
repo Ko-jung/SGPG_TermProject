@@ -14,6 +14,7 @@
 ## 개발 범위
 1. 게임 타이틀
 
+<img src="READMEImg/게임타이틀.jpg" width="400" height="400"/>
 ![](READMEImg/게임타이틀.jpg)
 
 2. 게임 로비
