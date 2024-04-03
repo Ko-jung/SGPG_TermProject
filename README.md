@@ -1,6 +1,7 @@
 # 리듬 세상 for Android
 > 스마트폰 게임 프로그래밍 텀프로젝트
-닌텐도 사의 DS게임 ['리듬 세상'](https://www.youtube.com/watch?v=FwdBLgFA7qM&ab_channel=Japancommercials4U2)의 모방 게임입니다.
+
+>닌텐도 사의 DS게임 ['리듬 세상'](https://www.youtube.com/watch?v=FwdBLgFA7qM&ab_channel=Japancommercials4U2)의 모방 게임입니다.
 
 ![](READMEImg/메인이미지.jpg)
 
