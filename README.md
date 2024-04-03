@@ -58,7 +58,7 @@ edit autoexec.bat
 ![](READMEImg/게임로비예상안.png)
 ===
 >실제 게임과 같은 방식으로 진행되며, 화면이 양 옆으로 배치가 아닌 위 아래로 배치할 예정
-```
+
 게임 로비 화면
  :arrow_down_small:
 게임 시작
@@ -68,7 +68,7 @@ Touch, Hold, Slide로 게임 진행
 게임 종료 및 결과 출력
  :arrow_down_small:
 게임 로비 화면
-```
+
 ## 개발 일정
 
 |일자|개발 내용|
