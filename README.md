@@ -16,7 +16,9 @@
 
 ![](READMEImg/로봇공장.webp)
 
-게임3: 
+게임3: [슈팅](https://www.youtube.com/watch?v=82T71E_IBuQ&pp=ygUT66as65Os7IS47IOBIOyKiO2MhQ%3D%3D)
+
+![](READMEImg/슈팅.jpg)
 
 사진: [나무위키](https://namu.wiki/w/%EB%A6%AC%EB%93%AC%20%EC%84%B8%EC%83%81/%EC%88%98%EB%A1%9D%20%EA%B2%8C%EC%9E%84)
 
