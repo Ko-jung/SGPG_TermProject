@@ -7,9 +7,13 @@
 
 ## 개발 범위
 게임 타이틀, 게임 로비, 게임 3개
+
 게임1: [팬클럽](https://www.youtube.com/watch?v=e90ZA60n7wo&pp=ygUX66as65Os7IS47IOBIO2MrO2BtOufvSA%3D)
+
 ![](READMEImg/팬클럽.jpg)
+
 게임2: 로봇 공장
+
 게임3: 
 
 OS X & 리눅스:
