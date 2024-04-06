@@ -25,13 +25,19 @@
 
 <img src="READMEImg/팬클럽.jpg" width="400" height="400"/>
 
+<img src="READMEImg/팬클럽결과메시지.png" width="400" height="300"/>
+
 4. 게임2: [로봇 공장](https://www.youtube.com/watch?v=p16F9XIyFcU&pp=ygUZ66as65Os7IS47IOBIOuhnOu0h-qzteyepQ%3D%3D)
 
 <img src="READMEImg/로봇공장.webp" width="400" height="400"/>
 
+<img src="READMEImg/로봇공장결과메시지.png" width="400" height="300"/>
+
 5. 게임3: [슈팅](https://www.youtube.com/watch?v=82T71E_IBuQ&pp=ygUT66as65Os7IS47IOBIOyKiO2MhQ%3D%3D)
 
 <img src="READMEImg/슈팅.jpg" width="400" height="400"/>
+
+<img src="READMEImg/슈팅결과메시지.png" width="400" height="300"/>
 
 6. 게임 종료 및 랭크: 예시
 
