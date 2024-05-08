@@ -8,11 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.R;
+import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.scene.Fillbot;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.scene.MainScene;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.activity.GameActivity;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
 public class RhythmActivity extends GameActivity {
+
     private enum rank{ IRON, BRONZE, SILVER, GOLD };
     private String gameList[] = {new String("로봇 공장"), new String("팬클럽"), new String("슈팅")};
     private int gameImgIds[] = {R.mipmap.fillbotsroundtitleimage, R.mipmap.fanclubroundtitleimage, R.mipmap.shootingroundtitleimage};
@@ -37,6 +39,20 @@ public class RhythmActivity extends GameActivity {
 
     public void onBtnOption(View view) {
         //open option window
+    }
+
+    public void onCLickGameTitle(View view) {
+        switch (currentSelect){
+            case 0:
+                new Fillbot().push();
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
     }
 
     private void processSelect() {
