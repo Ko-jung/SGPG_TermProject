@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.R;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.scene.MainScene;
@@ -11,7 +12,7 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.activity.GameActivit
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
 public class RhythmActivity extends GameActivity {
-    private int gameList[];
+    private String gameList[] = {new String("로봇 공장"), new String("팬클럽"), new String("슈팅")};
     private int currentSelect;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,30 +31,37 @@ public class RhythmActivity extends GameActivity {
         //open option window
     }
 
+    private void processSelect() {
+        ImageView leftImage = (ImageView)findViewById(R.id.leftAngleBracket);
+        ImageView rightImage = (ImageView)findViewById(R.id.rightAngleBracket);
+        TextView gameText = (TextView)findViewById(R.id.selectGameText);
+
+        if(currentSelect == 0) {
+            leftImage.setVisibility(View.INVISIBLE);
+        }
+        else if (currentSelect == 2) {
+            rightImage.setVisibility(View.INVISIBLE);
+        }
+        else {
+            leftImage.setVisibility(View.VISIBLE);
+            rightImage.setVisibility(View.VISIBLE);
+        }
+
+        gameText.setText(gameList[currentSelect]);
+    }
+
     public void onBtnLeft(View view) {
         if(currentSelect > 0) {
             currentSelect -= 1;
-            ImageView leftImage = (ImageView)findViewById(R.id.leftAngleBracket);
-            ImageView rightImage = (ImageView)findViewById(R.id.rightAngleBracket);
-            if(currentSelect == 0) {
-                leftImage.setVisibility(View.INVISIBLE);
-            }
-            rightImage.setVisibility(View.VISIBLE);
         }
-        Log.v("test", "onBtnLeft in RhythmActivity");
+        processSelect();
     }
 
     public void onBtnRight(View view) {
         if(currentSelect < 2)
         {
             currentSelect += 1;
-            ImageView leftImage = (ImageView)findViewById(R.id.leftAngleBracket);
-            ImageView rightImage = (ImageView)findViewById(R.id.rightAngleBracket);
-            if(currentSelect == 2) {
-                rightImage.setVisibility(View.INVISIBLE);
-            }
-            leftImage.setVisibility(View.VISIBLE);
         }
-        Log.v("test", "onBtnRight in RhythmActivity");
+        processSelect();
     }
 }
