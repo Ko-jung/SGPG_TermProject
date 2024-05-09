@@ -25,7 +25,7 @@
 
 게임 화면
 
-<img src="READMEImg/2/로봇공장인게임.png" width="250" height="400"/>
+<img src="READMEImg/2/인게임.gif" width="250" height="400"/>
 
 전체 약 30% 진행
 
