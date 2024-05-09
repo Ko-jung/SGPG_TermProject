@@ -15,6 +15,8 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
 public class RhythmActivity extends GameActivity {
 
+    private MainScene mainScene;
+
     private enum rank{ IRON, BRONZE, SILVER, GOLD };
     private String gameList[] = {new String("로봇 공장"), new String("팬클럽"), new String("슈팅")};
     private int gameImgIds[] = {R.mipmap.fillbotsroundtitleimage, R.mipmap.fanclubroundtitleimage, R.mipmap.shootingroundtitleimage};
@@ -31,7 +33,8 @@ public class RhythmActivity extends GameActivity {
         setContentView(R.layout.select_game);
         // Scene.drawsDebugInfo 변경 시점에 주의한다.
         // new GameView() 가 호출되는 super.onCreate() 보다 이전에 해야 한다.
-        new MainScene().push();
+        mainScene = new MainScene();
+        mainScene.push();
 
         TextView gameText = (TextView)findViewById(R.id.selectGameText);
         gameText.setText(gameList[0]);
@@ -44,7 +47,7 @@ public class RhythmActivity extends GameActivity {
     public void onCLickGameTitle(View view) {
         switch (currentSelect){
             case 0:
-                new Fillbot().push();
+                mainScene.push(new Fillbot());
                 break;
             case 1:
                 break;
