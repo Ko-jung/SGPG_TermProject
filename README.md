@@ -21,7 +21,7 @@
 
 게임 선택 화면
 
-<img src="READMEImg/2/로봇공장.png" width="250" height="400"/>
+<img src="READMEImg/2/게임선택.gif" width="250" height="400"/>
 
 게임 화면
 
