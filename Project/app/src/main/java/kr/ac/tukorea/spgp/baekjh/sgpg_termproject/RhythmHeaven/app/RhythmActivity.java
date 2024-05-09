@@ -28,13 +28,12 @@ public class RhythmActivity extends GameActivity {
         currentSelect = 0;
 
         //Scene.drawsDebugInfo = BuildConfig.DEBUG;
-        Metrics.setGameSize(16, 9);
+        //Metrics.setGameSize(16, 9);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_game);
         // Scene.drawsDebugInfo 변경 시점에 주의한다.
         // new GameView() 가 호출되는 super.onCreate() 보다 이전에 해야 한다.
-        mainScene = new MainScene();
-        mainScene.push();
+        new MainScene().push();
 
         TextView gameText = (TextView)findViewById(R.id.selectGameText);
         gameText.setText(gameList[0]);
@@ -47,7 +46,8 @@ public class RhythmActivity extends GameActivity {
     public void onCLickGameTitle(View view) {
         switch (currentSelect){
             case 0:
-                mainScene.push(new Fillbot());
+                setContentView(gameView);
+                new Fillbot().push();
                 break;
             case 1:
                 break;

@@ -38,6 +38,9 @@ public class Sprite implements IGameObject {
         radius = Math.min(width, height) / 2;
         dstRect.set(x - width / 2, y - height / 2, x + width / 2, y + height / 2);
     }
+    public void setUseRectPosition(float l, float t, float r, float b) {
+        dstRect.set(l,t,r,b);
+    }
     @Override
     public void update(float elapsedSeconds) {
         float timedDx = dx * elapsedSeconds;

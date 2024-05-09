@@ -10,7 +10,7 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.GameView;
 public class GameActivity extends AppCompatActivity {
 
     public static GameActivity activity;
-    private GameView gameView;
+    protected GameView gameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
