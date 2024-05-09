@@ -27,7 +27,7 @@
 
 <img src="READMEImg/2/인게임.gif" width="250" height="400"/>
 
-전체 약 30% 진행
+전체 약 20% 진행
 
 ## git commit
 |일자|커밋 수|
@@ -42,9 +42,7 @@
 ## 목표 변경
 X
 
-## MainScene 에 등장하는 game object 들에 대하여 다음 사항 포함
-
- -- class 구성 정보 (그림 구성, 동작 구성 등)
+## MainScene 에 등장하는 game object
 
 + class Convayor
 	+ 로봇 공장에서 바닥에 배치될 컨베이어 벨트입니다.
