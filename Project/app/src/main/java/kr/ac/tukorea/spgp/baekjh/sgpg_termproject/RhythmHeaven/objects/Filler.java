@@ -11,6 +11,8 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.objects.SheetSprite;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
 public class Filler extends SheetSprite implements IBoxCollidable {
+
+
     public enum State {
         idle, touchDown, holding, touchUp, filling, COUNT
     }
@@ -103,6 +105,11 @@ public class Filler extends SheetSprite implements IBoxCollidable {
             srcRects = srcRectsArray[state.ordinal()];
         }
     }
-
+    public void EndOverlap(IGameObject CollideTarget) {
+        if (CollideTarget instanceof Robot){
+            state = State.filling;
+            srcRects = srcRectsArray[state.ordinal()];
+        }
+    }
 }
 

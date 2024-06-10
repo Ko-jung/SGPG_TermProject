@@ -67,6 +67,13 @@ public class Robot extends SheetSprite implements IBoxCollidable {
         }
     }
 
+    public void EndOverlap(IGameObject CollideTarget) {
+        if (CollideTarget instanceof Filler)
+        {
+            StopMoving = false;
+        }
+    }
+
 
     @Override
     public void draw(Canvas canvas) {

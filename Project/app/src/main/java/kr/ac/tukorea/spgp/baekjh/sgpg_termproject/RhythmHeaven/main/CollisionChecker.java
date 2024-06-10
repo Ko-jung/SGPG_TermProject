@@ -14,6 +14,7 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.interfaces.IGameObje
 
 public class CollisionChecker implements IGameObject {
     private final Fillbot scene;
+    private boolean IsOverlapped = false;
 
     public CollisionChecker(Fillbot scene) {
         this.scene = scene;
@@ -38,6 +39,14 @@ public class CollisionChecker implements IGameObject {
 
                         bot.Collide(castFiller);
                         castFiller.Collide(bot);
+
+                        IsOverlapped = true;
+                    }
+                    else if (IsOverlapped) {
+                        bot.EndOverlap(castFiller);
+                        castFiller.EndOverlap(bot);
+
+                        IsOverlapped = false;
                     }
                 }
             }
