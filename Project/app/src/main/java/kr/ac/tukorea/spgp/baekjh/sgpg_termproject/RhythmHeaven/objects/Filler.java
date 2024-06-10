@@ -6,6 +6,7 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.interfaces.IBoxCollidable;
+import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.interfaces.IGameObject;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.objects.SheetSprite;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
@@ -81,5 +82,13 @@ public class Filler extends SheetSprite implements IBoxCollidable {
         }
         return new RectF();
     }
+
+    public void Collide(IGameObject CollideTarget) {
+        if (CollideTarget instanceof Robot){
+            state = State.filling;
+            srcRects = srcRectsArray[state.ordinal()];
+        }
+    }
+
 }
 

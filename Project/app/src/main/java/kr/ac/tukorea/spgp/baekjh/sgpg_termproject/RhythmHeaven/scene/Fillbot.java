@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import java.util.ArrayList;
 
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.R;
+import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.main.CollisionChecker;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.objects.Convayor;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.objects.Filler;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.objects.Robot;
@@ -15,7 +16,7 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.scene.Scene;
 
 public class Fillbot extends Scene {
     public enum Layer {
-        bg, filler, conveyor, robot, COUNT
+        bg, filler, conveyor, robot, controller, COUNT
     }
 
     public Fillbot() {
@@ -27,6 +28,8 @@ public class Fillbot extends Scene {
         add(Layer.conveyor, new Convayor(R.mipmap.fillbotsconveyorsprite, 1.f));
 
         add(Layer.robot, new Robot(R.mipmap.fillbotsbotsprite, 1.f));
+
+        add(Layer.controller, new CollisionChecker(this));
     }
     @Override
     public boolean onTouch(MotionEvent event)  {

@@ -32,5 +32,8 @@ public class Convayor extends Sprite {
         }
     }
 
+    public void SetSpeed(float s){
+        speed = s;
+    }
 }
 
