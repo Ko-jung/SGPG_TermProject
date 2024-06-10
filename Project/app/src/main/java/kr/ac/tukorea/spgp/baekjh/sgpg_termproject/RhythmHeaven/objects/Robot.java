@@ -39,16 +39,6 @@ public class Robot extends SheetSprite {
             timer += elapsedSeconds;
         fluidColor.setUseRectPosition(dstRect.left,dstRect.bottom - (dstRect.bottom - dstRect.top) * (timer / 4.f),dstRect.right,dstRect.bottom);
     }
-    protected static Rect[] makeRects(int... indices) {
-        Rect[] rects = new Rect[indices.length];
-        for (int i = 0; i < indices.length; i++) {
-            int idx = indices[i];
-            int l = 72 + (idx % 100) * 272;
-            int t = 132 + (idx / 100) * 272;
-            rects[i] = new Rect(l, t, l + 140, t + 140);
-        }
-        return rects;
-    }
 
     @Override
     public void draw(Canvas canvas) {

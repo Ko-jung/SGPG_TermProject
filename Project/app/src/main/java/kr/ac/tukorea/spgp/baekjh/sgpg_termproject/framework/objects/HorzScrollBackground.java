@@ -4,18 +4,14 @@ import android.graphics.Canvas;
 
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
-public class HorzScrollBackground extends Sprite {
-    private final float speed;
+public class HorzScrollBackground extends HorzMoveObject {
     private final float height;
     public HorzScrollBackground(int bitmapResId, float speed) {
-        super(bitmapResId);
+        super(bitmapResId, speed);
+
         this.height = bitmap.getHeight() * Metrics.width / bitmap.getWidth();
         setPosition(Metrics.width / 2, Metrics.height / 2, Metrics.width, height);
         this.speed = speed;
-    }
-    @Override
-    public void update(float elapsedSeconds) {
-        this.x -= speed * elapsedSeconds; // x 값을 스크롤된 양으로 사용한다
     }
 
     @Override
