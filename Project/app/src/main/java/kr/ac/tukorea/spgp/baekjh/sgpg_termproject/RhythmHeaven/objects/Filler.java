@@ -12,13 +12,15 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
 public class Filler extends SheetSprite implements IBoxCollidable {
     public enum State {
-        idle, touchDown, filling, COUNT
+        idle, touchDown, holding, touchUp, filling, COUNT
     }
     protected State state = State.idle;
     protected static Rect[][] srcRectsArray = {
             makeRects(28),      // State.idle
-            makeRects(25,19,13,7,1,29,29), // State.TouchDown
-            makeRects(1,2,3,2,1) // State.Filling.
+            makeRects(25,19,13,7,1,29,29,36,36,36,36,36), // State.TouchDown
+            makeRects(36), // State.holding
+            makeRects(29,1,7,13,19,25), // State.touchUp
+            makeRects(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,2,2,2,2,2,1,1,1,1,1) // State.Filling.
 
     };
 
@@ -56,9 +58,14 @@ public class Filler extends SheetSprite implements IBoxCollidable {
         int index = Math.round(time * fps) % srcRects.length;
 
         if(state == State.touchDown && index >= srcRectsArray[state.ordinal()].length - 1) {
-            state = State.idle;
+            createdOn = System.currentTimeMillis();
+            state = State.holding;
             srcRects = srcRectsArray[state.ordinal()];
             IsCanCollision = false;
+        } else if (state == State.touchUp && index >= srcRectsArray[state.ordinal()].length - 1) {
+            createdOn = System.currentTimeMillis();
+            state = State.idle;
+            srcRects = srcRectsArray[state.ordinal()];
         }
     }
 
@@ -68,7 +75,14 @@ public class Filler extends SheetSprite implements IBoxCollidable {
             state = State.touchDown;
             srcRects = srcRectsArray[state.ordinal()];
             createdOn = System.currentTimeMillis();
+            createdOn = System.currentTimeMillis();
             IsCanCollision = true;
+            return true;
+        } else if (e.getAction() == MotionEvent.ACTION_UP) {
+            state = State.touchUp;
+            srcRects = srcRectsArray[state.ordinal()];
+            createdOn = System.currentTimeMillis();
+            IsCanCollision = false;
             return true;
         }
 

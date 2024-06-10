@@ -48,10 +48,11 @@ public class Robot extends SheetSprite implements IBoxCollidable {
             this.x += speed * elapsedSeconds; // x 값을 스크롤된 양으로 사용한다
             dstRect.set(x, y, x + width, y + height);
         }
-
-        // TODO: 그냥 움직이는 Object를 관리할 클래스 만들기
-        if(timer < 4.f)
-            timer += elapsedSeconds;
+        else {
+            // TODO: 그냥 움직이는 Object를 관리할 클래스 만들기
+            if(timer < 4.f)
+                timer += elapsedSeconds;
+        }
 
         SyncRects();
     }
