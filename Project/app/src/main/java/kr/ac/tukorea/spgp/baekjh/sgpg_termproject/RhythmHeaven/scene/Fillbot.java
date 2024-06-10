@@ -32,11 +32,12 @@ public class Fillbot extends Scene {
     public boolean onTouch(MotionEvent event)  {
         Log.v("test", "onTouch in Fillbot");
         ArrayList<IGameObject> object = layers.get(Fillbot.Layer.filler.ordinal());
-        for (int i = 0; i < object.size(); ++i)
-        {
-            
-            object[i];
+        for (IGameObject o : object) {
+            if(o instanceof Filler) {
+                return ((Filler) o).onTouchEvent(event);
+            }
         }
-        return true;
+
+        return false;
     }
 }

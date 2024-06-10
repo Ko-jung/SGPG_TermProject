@@ -1,17 +1,18 @@
 package kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.objects;
 
 import android.graphics.Rect;
+import android.view.MotionEvent;
 
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.objects.SheetSprite;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
 public class Filler extends SheetSprite {
     public enum State {
-        waiting, touchDown, filling, COUNT
+        idle, touchDown, filling, COUNT
     }
-    protected State state = State.touchDown;
+    protected State state = State.idle;
     protected static Rect[][] srcRectsArray = {
-            makeRects(28),      // State.Idle
+            makeRects(28),      // State.idle
             makeRects(28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,29), // State.TouchDown
             makeRects(1,2,3,2,1) // State.Filling.
 
@@ -24,7 +25,7 @@ public class Filler extends SheetSprite {
         //setPosition(0, 0, Metrics.width, height);
 
         setPosition(4.5f, 8.0f, 9.f, 16.0f);
-        srcRects = srcRectsArray[0];
+        srcRects = srcRectsArray[state.ordinal()];
     }
     protected static Rect[] makeRects(int... indices) {
         Rect[] rects = new Rect[indices.length];
@@ -36,4 +37,25 @@ public class Filler extends SheetSprite {
         }
         return rects;
     }
+
+    public void update(float elapsedSeconds){
+        super.update(elapsedSeconds);
+
+        long now = System.currentTimeMillis();
+        float time = (now - createdOn) / 1000.0f;
+        int index = Math.round(time * fps) % srcRects.length;
+
+        if(state == State.touchDown && index >= srcRectsArray[state.ordinal()].length - 1) {
+            state = State.idle;
+            srcRects = srcRectsArray[state.ordinal()];
+        }
+    }
+
+    public boolean onTouchEvent(MotionEvent e){
+        state = State.touchDown;
+        srcRects = srcRectsArray[state.ordinal()];
+        createdOn = System.currentTimeMillis();
+        return true;
+    }
 }
+
