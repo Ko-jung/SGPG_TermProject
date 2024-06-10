@@ -14,7 +14,7 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.objects.VertScrollBa
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.scene.Scene;
 
 public class Fillbot extends Scene {
-    private enum Layer {
+    public enum Layer {
         bg, filler, conveyor, robot, COUNT
     }
 

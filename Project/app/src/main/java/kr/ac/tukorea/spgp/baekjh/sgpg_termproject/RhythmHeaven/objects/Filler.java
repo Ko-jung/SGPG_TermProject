@@ -1,22 +1,29 @@
 package kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.objects;
 
+import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.view.MotionEvent;
 
+import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.interfaces.IBoxCollidable;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.objects.SheetSprite;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 
-public class Filler extends SheetSprite {
+public class Filler extends SheetSprite implements IBoxCollidable {
     public enum State {
         idle, touchDown, filling, COUNT
     }
     protected State state = State.idle;
     protected static Rect[][] srcRectsArray = {
             makeRects(28),      // State.idle
-            makeRects(25,19,13,7,1,29), // State.TouchDown
+            makeRects(25,19,13,7,1,29,29), // State.TouchDown
             makeRects(1,2,3,2,1) // State.Filling.
 
     };
+
+    private RectF CollisionBox = new RectF();
+
+    public boolean IsCanCollision = false;
 
     public Filler(int mipmapId) {
         super(mipmapId, 30);
@@ -26,6 +33,8 @@ public class Filler extends SheetSprite {
 
         setPosition(4.5f, 11.0f, 9.f, 16.0f);
         srcRects = srcRectsArray[state.ordinal()];
+
+        CollisionBox.set(4.75f - 0.5f, 11.5f - 0.5f, 4.75f + 0.5f, 11.5f + 0.5f);
     }
     protected static Rect[] makeRects(int... indices) {
         Rect[] rects = new Rect[indices.length];
@@ -48,6 +57,7 @@ public class Filler extends SheetSprite {
         if(state == State.touchDown && index >= srcRectsArray[state.ordinal()].length - 1) {
             state = State.idle;
             srcRects = srcRectsArray[state.ordinal()];
+            IsCanCollision = false;
         }
     }
 
@@ -57,8 +67,19 @@ public class Filler extends SheetSprite {
             state = State.touchDown;
             srcRects = srcRectsArray[state.ordinal()];
             createdOn = System.currentTimeMillis();
+            IsCanCollision = true;
+            return true;
         }
-        return true;
+
+        return false;
+    }
+
+    @Override
+    public RectF getCollisionRect(){
+        if(IsCanCollision) {
+            return CollisionBox;
+        }
+        return new RectF();
     }
 }
 
