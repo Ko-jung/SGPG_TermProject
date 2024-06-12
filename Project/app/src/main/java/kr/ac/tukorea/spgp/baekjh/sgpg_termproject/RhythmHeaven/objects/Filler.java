@@ -3,6 +3,7 @@ package kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.objects;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.interfaces.IBoxCollidable;
@@ -57,7 +58,7 @@ public class Filler extends SheetSprite implements IBoxCollidable {
 
         long now = System.currentTimeMillis();
         float time = (now - createdOn) / 1000.0f;
-        int index = Math.round(time * fps) % srcRects.length;
+        int index = Math.round(time * fps);
 
         if(state == State.touchDown && index >= srcRectsArray[state.ordinal()].length - 1) {
             createdOn = System.currentTimeMillis();
@@ -74,13 +75,14 @@ public class Filler extends SheetSprite implements IBoxCollidable {
     public boolean onTouchEvent(MotionEvent e){
         if(e.getAction() == MotionEvent.ACTION_DOWN)
         {
+            Log.d("Filler", "MotionEvent.ACTION_DOWN");
             state = State.touchDown;
             srcRects = srcRectsArray[state.ordinal()];
-            createdOn = System.currentTimeMillis();
             createdOn = System.currentTimeMillis();
             IsCanCollision = true;
             return true;
         } else if (e.getAction() == MotionEvent.ACTION_UP) {
+            Log.d("Filler", "MotionEvent.ACTION_UP");
             state = State.touchUp;
             srcRects = srcRectsArray[state.ordinal()];
             createdOn = System.currentTimeMillis();
@@ -107,8 +109,6 @@ public class Filler extends SheetSprite implements IBoxCollidable {
     }
     public void EndOverlap(IGameObject CollideTarget) {
         if (CollideTarget instanceof Robot){
-            state = State.filling;
-            srcRects = srcRectsArray[state.ordinal()];
         }
     }
 }

@@ -2,6 +2,7 @@ package kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.main;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -34,6 +35,7 @@ public class CollisionChecker implements IGameObject {
 
                     if (collides(castFiller.getCollisionRect(), bot.getCollisionRect()))
                     {
+                        Log.d("CollisionChecker", "Overlapping");
                         Convayor convayor = ((Convayor)convayors.get(0));
                         convayor.SetSpeed(0.f);
 
@@ -43,6 +45,7 @@ public class CollisionChecker implements IGameObject {
                         IsOverlapped = true;
                     }
                     else if (IsOverlapped) {
+                        Log.d("CollisionChecker", "End Overlap");
                         bot.EndOverlap(castFiller);
                         castFiller.EndOverlap(bot);
 
