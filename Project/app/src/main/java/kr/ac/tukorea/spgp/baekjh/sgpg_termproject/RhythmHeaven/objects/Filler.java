@@ -66,6 +66,7 @@ public class Filler extends SheetSprite implements IBoxCollidable {
             switch (state){
                 case touchDown:{
                     ChangeState(State.holding);
+                    IsCanCollision = false;
                     break;
                 }
                 case touchUp: {

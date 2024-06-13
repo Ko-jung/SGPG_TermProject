@@ -21,6 +21,8 @@ public class Scene {
     private static ArrayList<Scene> stack = new ArrayList<>();
 
     public static boolean drawsDebugInfo = true;
+    protected int Score = 0;
+    public int GetScore(){return Score;}
 
     public static Scene top() {
         int top = stack.size() - 1;

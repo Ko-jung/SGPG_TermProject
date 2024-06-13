@@ -58,7 +58,7 @@ public class CollisionChecker implements IGameObject {
                             bot.EndOverlap(castFiller);
                             castFiller.EndOverlap(bot);
 
-                            scene.AddScore(bot.GetScore());
+                            scene.AddScore(bot.GetLevel());
 
                             IsOverlapped = false;
                         }

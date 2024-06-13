@@ -20,11 +20,10 @@ public class Fillbot extends Scene {
         bg, filler, conveyor, robot, controller, COUNT
     }
 
-    private int Score = 0;
 
     public Fillbot() {
         initLayers(Fillbot.Layer.COUNT);
-        add(Layer.bg, new VertScrollBackground(R.mipmap.background, 1.f));
+        add(Layer.bg, new VertScrollBackground(R.mipmap.white_back_ground, 1.f));
 
         add(Layer.filler, new Filler(R.mipmap.fillbotsfillersprite));
 
@@ -52,7 +51,7 @@ public class Fillbot extends Scene {
             Score += 1;
         } else if (CollisionLevel == 1) {
             Score += 3;
-        } else {
+        } else if (CollisionLevel == 2){
             Score += 7;
         }
     }
