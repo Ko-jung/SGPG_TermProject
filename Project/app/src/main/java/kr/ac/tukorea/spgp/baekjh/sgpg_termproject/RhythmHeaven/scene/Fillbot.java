@@ -55,11 +55,4 @@ public class Fillbot extends Scene {
             Score += 7;
         }
     }
-
-    @Override
-    public void draw(Canvas canvas) {
-        super.draw(canvas);
-
-        Log.d("FillBot", "Score: " + Integer.toString(Score));
-    }
 }
