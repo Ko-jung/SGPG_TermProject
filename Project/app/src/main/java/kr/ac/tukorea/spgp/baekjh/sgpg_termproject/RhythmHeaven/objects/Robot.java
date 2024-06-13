@@ -69,6 +69,7 @@ public class Robot extends SheetSprite implements IBoxCollidable {
 
     private float timer = 0.f;
     private float scoreTimer = 0.f;
+    public static int deleteCount = 0;
     @Override
     public void update(float elapsedSeconds) {
         if(!StopMoving)
@@ -79,6 +80,7 @@ public class Robot extends SheetSprite implements IBoxCollidable {
             if(x >= 9.f){
                 Scene.top().remove(Fillbot.Layer.robot, this);
                 Scene.top().add(Fillbot.Layer.robot, new Robot(R.mipmap.fillbotsbotsprite, 1.f));
+                deleteCount += 1;
             }
         }
         else {

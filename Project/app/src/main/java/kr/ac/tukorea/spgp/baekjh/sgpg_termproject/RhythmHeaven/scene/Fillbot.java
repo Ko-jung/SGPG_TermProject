@@ -1,5 +1,6 @@
 package kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.scene;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -7,6 +8,7 @@ import android.view.MotionEvent;
 import java.util.ArrayList;
 
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.R;
+import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.app.RhythmActivity;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.main.CollisionChecker;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.objects.Convayor;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.objects.Filler;
@@ -19,6 +21,7 @@ public class Fillbot extends Scene {
     public enum Layer {
         bg, filler, conveyor, robot, controller, COUNT
     }
+    private Context context;
 
 
     public Fillbot() {
@@ -44,6 +47,18 @@ public class Fillbot extends Scene {
         }
 
         return false;
+    }
+
+    @Override
+    public void update(float elapsedSeconds) {
+        super.update(elapsedSeconds);
+
+        if(Robot.deleteCount >= 2){
+            //setContentView(gameView);
+            pop();
+            new RhythmActivity().;
+            //new Fillbot().push();
+        }
     }
 
     public void AddScore(int CollisionLevel) {
