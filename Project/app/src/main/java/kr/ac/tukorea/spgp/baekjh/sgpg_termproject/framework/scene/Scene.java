@@ -20,7 +20,7 @@ public class Scene {
     private static final String TAG = Scene.class.getSimpleName();
     private static ArrayList<Scene> stack = new ArrayList<>();
 
-    public static boolean drawsDebugInfo = true;
+    public static boolean drawsDebugInfo = false;
     protected int Score = 0;
     public int GetScore(){return Score;}
 
@@ -192,5 +192,8 @@ public class Scene {
             RecycleBin.collect((IRecyclable) gameObject);
         }
     }
-
+    public <E extends Enum<E>> void remove(E layer) {
+        ArrayList<IGameObject> objects = layers.get(layer.ordinal());
+        objects.clear();
+    }
 }

@@ -32,9 +32,9 @@ public class Fillbot extends Scene {
 
         add(Layer.filler, new Filler(R.mipmap.fillbotsfillersprite));
 
-        add(Layer.conveyor, new Convayor(R.mipmap.fillbotsconveyorsprite, 1.f));
+        add(Layer.conveyor, new Convayor(R.mipmap.fillbotsconveyorsprite, 2.f));
 
-        add(Layer.robot, new Robot(R.mipmap.fillbotsbotsprite, 1.f));
+        add(Layer.robot, new Robot(R.mipmap.fillbotsbotsprite, 2.f));
 
         add(Layer.controller, new CollisionChecker(this));
     }
@@ -55,7 +55,7 @@ public class Fillbot extends Scene {
     public void update(float elapsedSeconds) {
         super.update(elapsedSeconds);
 
-        if(Robot.deleteCount >= 2){
+        if(Robot.deleteCount >= 10){
             //setContentView(gameView);
             pop();
 
@@ -75,6 +75,5 @@ public class Fillbot extends Scene {
         } else if (CollisionLevel == 2){
             Score += 7;
         }
-        Score = 140;
     }
 }

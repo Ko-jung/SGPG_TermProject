@@ -5,6 +5,8 @@ import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
+import java.util.Random;
+
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.R;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.scene.Fillbot;
 import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.scene.MainScene;
@@ -79,15 +81,20 @@ public class Robot extends SheetSprite implements IBoxCollidable {
 
             if(x >= 9.f){
                 Scene.top().remove(Fillbot.Layer.robot, this);
-                Scene.top().add(Fillbot.Layer.robot, new Robot(R.mipmap.fillbotsbotsprite, 1.f));
+                Scene.top().remove(Fillbot.Layer.conveyor);
+
+                float newSpeed = (float)(Math.random() * 3.f + 1.f);
+                Scene.top().add(Fillbot.Layer.robot, new Robot(R.mipmap.fillbotsbotsprite, newSpeed));
+                Scene.top().add(Fillbot.Layer.conveyor, new Convayor(R.mipmap.fillbotsconveyorsprite, newSpeed));
                 deleteCount += 1;
             }
         }
         else {
             // TODO: 그냥 움직이는 Object를 관리할 클래스 만들기
             scoreTimer += elapsedSeconds;
-            if(timer < 4.f)
-                timer += elapsedSeconds;
+            timer += elapsedSeconds;
+            if(timer > 4.f)
+                timer = 4.f;
         }
 
         SyncRects();
