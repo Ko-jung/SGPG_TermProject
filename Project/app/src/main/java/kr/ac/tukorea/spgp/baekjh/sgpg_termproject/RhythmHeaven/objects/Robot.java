@@ -61,7 +61,11 @@ public class Robot extends SheetSprite implements IBoxCollidable {
         if (CollideTarget instanceof Filler)
         {
             StopMoving = true;
-            dstRect.set(4.75f - width / 2, 11.5f, 4.75f + width / 2, 11.5f + height);
+
+            this.x = 4.75f - width / 2; // x 값을 스크롤된 양으로 사용한다
+            dstRect.set(x, y, x + width, y + height);
+
+            //dstRect.set(4.75f - width / 2, 11.5f, 4.75f + width / 2, 11.5f + height);
 
             SyncRects();
         }

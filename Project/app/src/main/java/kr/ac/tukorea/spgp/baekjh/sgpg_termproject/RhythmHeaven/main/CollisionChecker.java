@@ -35,17 +35,22 @@ public class CollisionChecker implements IGameObject {
 
                     if (collides(castFiller.getCollisionRect(), bot.getCollisionRect()))
                     {
+                        if(IsOverlapped) continue;
+
                         Log.d("CollisionChecker", "Overlapping");
                         Convayor convayor = ((Convayor)convayors.get(0));
-                        convayor.SetSpeed(0.f);
+                        convayor.SetStopMoving(true);
 
                         bot.Collide(castFiller);
                         castFiller.Collide(bot);
-
                         IsOverlapped = true;
+
                     }
                     else if (IsOverlapped) {
                         Log.d("CollisionChecker", "End Overlap");
+                        Convayor convayor = ((Convayor)convayors.get(0));
+                        convayor.SetStopMoving(false);
+
                         bot.EndOverlap(castFiller);
                         castFiller.EndOverlap(bot);
 

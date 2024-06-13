@@ -15,15 +15,16 @@ public class Filler extends SheetSprite implements IBoxCollidable {
 
 
     public enum State {
-        idle, touchDown, holding, touchUp, filling, COUNT
+        idle, touchDown, holding, touchUp, filling, attach, COUNT
     }
     protected State state = State.idle;
     protected static Rect[][] srcRectsArray = {
             makeRects(28),      // State.idle
-            makeRects(25,19,13,7,1,29,29,36,36,36,36,36), // State.TouchDown
-            makeRects(36), // State.holding
-            makeRects(29,1,7,13,19,25), // State.touchUp
-            makeRects(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,2,2,2,2,2,1,1,1,1,1) // State.Filling.
+            makeRects(25,19,13,7,2,2,2), // State.TouchDown
+            makeRects(5), // State.holding
+            makeRects(2,7,13,19,25), // State.touchUp
+            makeRects(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,2,2,2,2,2,1,1,1,1,1), // State.Filling.
+            makeRects(29,29,29,0,0,0) // State.attach.
 
     };
 
@@ -60,15 +61,24 @@ public class Filler extends SheetSprite implements IBoxCollidable {
         float time = (now - createdOn) / 1000.0f;
         int index = Math.round(time * fps);
 
-        if(state == State.touchDown && index >= srcRectsArray[state.ordinal()].length - 1) {
+        if (index >= srcRectsArray[state.ordinal()].length - 1) {
             createdOn = System.currentTimeMillis();
-            state = State.holding;
-            srcRects = srcRectsArray[state.ordinal()];
-            IsCanCollision = false;
-        } else if (state == State.touchUp && index >= srcRectsArray[state.ordinal()].length - 1) {
-            createdOn = System.currentTimeMillis();
-            state = State.idle;
-            srcRects = srcRectsArray[state.ordinal()];
+            switch (state){
+                case touchDown:{
+                    ChangeState(State.holding);
+                    break;
+                }
+                case touchUp: {
+                    ChangeState(State.idle);
+                    break;
+                }
+                case attach: {
+                    ChangeState(State.filling);
+                    break;
+                }
+                default:
+                    break;
+            }
         }
     }
 
@@ -76,16 +86,14 @@ public class Filler extends SheetSprite implements IBoxCollidable {
         if(e.getAction() == MotionEvent.ACTION_DOWN)
         {
             Log.d("Filler", "MotionEvent.ACTION_DOWN");
-            state = State.touchDown;
-            srcRects = srcRectsArray[state.ordinal()];
             createdOn = System.currentTimeMillis();
+            ChangeState(State.touchDown);
             IsCanCollision = true;
             return true;
         } else if (e.getAction() == MotionEvent.ACTION_UP) {
             Log.d("Filler", "MotionEvent.ACTION_UP");
-            state = State.touchUp;
-            srcRects = srcRectsArray[state.ordinal()];
             createdOn = System.currentTimeMillis();
+            ChangeState(State.touchUp);
             IsCanCollision = false;
             return true;
         }
@@ -96,20 +104,27 @@ public class Filler extends SheetSprite implements IBoxCollidable {
     @Override
     public RectF getCollisionRect(){
         if(IsCanCollision) {
+            Log.d("Filler", "IsCanCollision is true");
             return CollisionBox;
         }
+        Log.d("Filler", "IsCanCollision is false");
         return new RectF();
     }
 
     public void Collide(IGameObject CollideTarget) {
         if (CollideTarget instanceof Robot){
-            state = State.filling;
-            srcRects = srcRectsArray[state.ordinal()];
+            ChangeState(State.attach);
         }
     }
     public void EndOverlap(IGameObject CollideTarget) {
         if (CollideTarget instanceof Robot){
         }
+    }
+
+    private void ChangeState(State newState){
+        Log.d("Filler", "Change State to " + state.toString());
+        state = newState;
+        srcRects = srcRectsArray[state.ordinal()];
     }
 }
 
