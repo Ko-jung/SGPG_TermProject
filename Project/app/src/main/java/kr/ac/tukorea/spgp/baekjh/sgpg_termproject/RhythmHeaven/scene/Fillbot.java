@@ -58,7 +58,10 @@ public class Fillbot extends Scene {
         if(Robot.deleteCount >= 2){
             //setContentView(gameView);
             pop();
+
             Intent intent = new Intent(context, RhythmActivity.class);
+            intent.putExtra("FillBot_Score", Score);
+
             context.startActivity(intent);
             //new Fillbot().push();
         }
@@ -72,5 +75,6 @@ public class Fillbot extends Scene {
         } else if (CollisionLevel == 2){
             Score += 7;
         }
+        Score = 140;
     }
 }

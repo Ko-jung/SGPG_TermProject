@@ -114,6 +114,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Rank"
+                android:textSize="40dp"
                 android:id="@+id/rankText">
             </TextView>
             <TextView
@@ -121,7 +122,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="scoreText">>
+                android:text="scoreText"
+                android:textSize="40dp"
+                android:id="@+id/scoreText">>>
             </TextView>
 
         </LinearLayout>
