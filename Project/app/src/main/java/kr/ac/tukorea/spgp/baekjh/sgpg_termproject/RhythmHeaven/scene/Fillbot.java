@@ -1,6 +1,7 @@
 package kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.scene;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -23,8 +24,9 @@ public class Fillbot extends Scene {
     }
     private Context context;
 
+    public Fillbot(Context context) {
+        this.context = context;
 
-    public Fillbot() {
         initLayers(Fillbot.Layer.COUNT);
         add(Layer.bg, new VertScrollBackground(R.mipmap.white_back_ground, 1.f));
 
@@ -56,7 +58,8 @@ public class Fillbot extends Scene {
         if(Robot.deleteCount >= 2){
             //setContentView(gameView);
             pop();
-            new RhythmActivity().;
+            Intent intent = new Intent(context, RhythmActivity.class);
+            context.startActivity(intent);
             //new Fillbot().push();
         }
     }

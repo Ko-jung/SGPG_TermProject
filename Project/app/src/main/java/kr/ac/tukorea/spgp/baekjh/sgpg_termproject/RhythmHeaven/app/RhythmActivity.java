@@ -47,7 +47,7 @@ public class RhythmActivity extends GameActivity {
         switch (currentSelect){
             case 0:
                 setContentView(gameView);
-                new Fillbot().push();
+                new Fillbot(this).push();
                 break;
             case 1:
                 break;
