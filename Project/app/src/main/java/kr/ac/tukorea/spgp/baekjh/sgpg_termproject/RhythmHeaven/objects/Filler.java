@@ -41,7 +41,7 @@ public class Filler extends SheetSprite implements IBoxCollidable {
         setPosition(4.5f, 11.0f, 9.f, 16.0f);
         srcRects = srcRectsArray[state.ordinal()];
 
-        CollisionBox.set(4.75f - 0.5f, 11.5f - 0.5f, 4.75f + 0.5f, 11.5f + 0.5f);
+        CollisionBox.set(4.75f - 0.05f, 11.5f - 0.5f, 4.75f + 0.05f, 11.5f + 0.5f);
     }
     protected static Rect[] makeRects(int... indices) {
         Rect[] rects = new Rect[indices.length];
@@ -104,10 +104,8 @@ public class Filler extends SheetSprite implements IBoxCollidable {
     @Override
     public RectF getCollisionRect(){
         if(IsCanCollision) {
-            Log.d("Filler", "IsCanCollision is true");
             return CollisionBox;
         }
-        Log.d("Filler", "IsCanCollision is false");
         return new RectF();
     }
 

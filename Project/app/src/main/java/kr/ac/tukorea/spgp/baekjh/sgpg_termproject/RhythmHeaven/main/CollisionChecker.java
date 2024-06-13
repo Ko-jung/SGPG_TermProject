@@ -2,6 +2,7 @@ package kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.main;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;
+import android.telephony.mbms.MbmsErrors;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -33,28 +34,34 @@ public class CollisionChecker implements IGameObject {
                 for (IGameObject r : robots) {
                     Robot bot = (Robot)r;
 
-                    if (collides(castFiller.getCollisionRect(), bot.getCollisionRect()))
-                    {
-                        if(IsOverlapped) continue;
 
-                        Log.d("CollisionChecker", "Overlapping");
-                        Convayor convayor = ((Convayor)convayors.get(0));
-                        convayor.SetStopMoving(true);
+                    for (int i = 2; i >= 0; --i) {
+                        if (collides(castFiller.getCollisionRect(), bot.getCollisionRects()[i]))
+                        {
+                            if(IsOverlapped) break;
 
-                        bot.Collide(castFiller);
-                        castFiller.Collide(bot);
-                        IsOverlapped = true;
+                            scene.AddScore(i);
 
-                    }
-                    else if (IsOverlapped) {
-                        Log.d("CollisionChecker", "End Overlap");
-                        Convayor convayor = ((Convayor)convayors.get(0));
-                        convayor.SetStopMoving(false);
+                            Log.d("CollisionChecker", "Overlapping At Index" + Integer.toString(i));
+                            Convayor convayor = ((Convayor)convayors.get(0));
+                            convayor.SetStopMoving(true);
 
-                        bot.EndOverlap(castFiller);
-                        castFiller.EndOverlap(bot);
+                            bot.Collide(castFiller);
+                            castFiller.Collide(bot);
+                            IsOverlapped = true;
+                        }
+                        else if (IsOverlapped) {
+                            Log.d("CollisionChecker", "End Overlap");
+                            Convayor convayor = ((Convayor)convayors.get(0));
+                            convayor.SetStopMoving(false);
 
-                        IsOverlapped = false;
+                            bot.EndOverlap(castFiller);
+                            castFiller.EndOverlap(bot);
+
+                            scene.AddScore(bot.GetScore());
+
+                            IsOverlapped = false;
+                        }
                     }
                 }
             }

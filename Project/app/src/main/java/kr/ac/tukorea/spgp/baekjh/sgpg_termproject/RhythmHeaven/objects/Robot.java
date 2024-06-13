@@ -14,7 +14,8 @@ import kr.ac.tukorea.spgp.baekjh.sgpg_termproject.framework.view.Metrics;
 public class Robot extends SheetSprite implements IBoxCollidable {
     private float speed;
 
-    public RectF CollisionBox = new RectF();
+    public RectF[] CollisionBoxs;
+    public float[] CollisionBoxWidths = {0.5f, 0.1f, 0.05f};
     private boolean StopMoving = false;
 
     private Sprite fluidColor;
@@ -32,15 +33,24 @@ public class Robot extends SheetSprite implements IBoxCollidable {
 
         fluidColor = new Sprite(R.mipmap.fluidcolor);
         fluidColor.setPosition(0.f,13.5f,4.f,2.f);
+
+        CollisionBoxs = new RectF[3];
+        for (int i = 0; i < 3; i++) {
+            CollisionBoxs[i] = new RectF((x + x + width) / 2 - CollisionBoxWidths[i], y - 0.5f,
+                    (x + x + width) / 2 + CollisionBoxWidths[i], y + 0.5f);
+        }
     }
 
     private void SyncRects() {
-        CollisionBox.set(  (x + x + width) / 2 - 0.5f, y - 0.5f,
-                (x + x + width) / 2 + 0.5f, y + 0.5f);
+        for (int i = 0; i < 3; i++) {
+            CollisionBoxs[i].set(  (x + x + width) / 2 - CollisionBoxWidths[i], y - 0.5f,
+                    (x + x + width) / 2 + CollisionBoxWidths[i], y + 0.5f);
+        }
         fluidColor.setUseRectPosition(dstRect.left,dstRect.bottom - (dstRect.bottom - dstRect.top) * (timer / 4.f),dstRect.right,dstRect.bottom);
     }
 
     private float timer = 0.f;
+    private float scoreTimer = 0.f;
     @Override
     public void update(float elapsedSeconds) {
         if(!StopMoving)
@@ -50,6 +60,7 @@ public class Robot extends SheetSprite implements IBoxCollidable {
         }
         else {
             // TODO: 그냥 움직이는 Object를 관리할 클래스 만들기
+            scoreTimer += elapsedSeconds;
             if(timer < 4.f)
                 timer += elapsedSeconds;
         }
@@ -65,8 +76,6 @@ public class Robot extends SheetSprite implements IBoxCollidable {
             this.x = 4.75f - width / 2; // x 값을 스크롤된 양으로 사용한다
             dstRect.set(x, y, x + width, y + height);
 
-            //dstRect.set(4.75f - width / 2, 11.5f, 4.75f + width / 2, 11.5f + height);
-
             SyncRects();
         }
     }
@@ -75,6 +84,18 @@ public class Robot extends SheetSprite implements IBoxCollidable {
         if (CollideTarget instanceof Filler)
         {
             StopMoving = false;
+        }
+    }
+
+    public int GetScore(){
+        if (-0.1f < (scoreTimer - 4.f) && (scoreTimer - 4.f) < 0.1f){
+            return 7;
+        } else if (-0.25f < (scoreTimer - 4.f) && (scoreTimer - 4.f) < 0.25f) {
+            return 3;
+        } else if (-0.5f < (scoreTimer - 4.f) && (scoreTimer - 4.f) < 0.5f) {
+            return 1;
+        } else {
+            return 0;
         }
     }
 
@@ -87,7 +108,10 @@ public class Robot extends SheetSprite implements IBoxCollidable {
 
     @Override
     public RectF getCollisionRect(){
-        return CollisionBox;
+        return CollisionBoxs[2];
+    }
+    public RectF[] getCollisionRects(){
+        return CollisionBoxs;
     }
 }
 

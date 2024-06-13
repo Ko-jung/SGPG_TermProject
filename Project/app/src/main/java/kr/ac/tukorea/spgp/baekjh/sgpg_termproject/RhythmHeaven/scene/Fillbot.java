@@ -1,5 +1,6 @@
 package kr.ac.tukorea.spgp.baekjh.sgpg_termproject.RhythmHeaven.scene;
 
+import android.graphics.Canvas;
 import android.util.Log;
 import android.view.MotionEvent;
 
@@ -18,6 +19,8 @@ public class Fillbot extends Scene {
     public enum Layer {
         bg, filler, conveyor, robot, controller, COUNT
     }
+
+    private int Score = 0;
 
     public Fillbot() {
         initLayers(Fillbot.Layer.COUNT);
@@ -42,5 +45,22 @@ public class Fillbot extends Scene {
         }
 
         return false;
+    }
+
+    public void AddScore(int CollisionLevel) {
+        if (CollisionLevel == 0) {
+            Score += 1;
+        } else if (CollisionLevel == 1) {
+            Score += 3;
+        } else {
+            Score += 7;
+        }
+    }
+
+    @Override
+    public void draw(Canvas canvas) {
+        super.draw(canvas);
+
+        Log.d("FillBot", "Score: " + Integer.toString(Score));
     }
 }
