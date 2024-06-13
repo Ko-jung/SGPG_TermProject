@@ -41,7 +41,7 @@
 - 사용된 기술
     + X	
 - 참고한 것들
-   + Android Developers 문서, 교수님 코드, ChatGPT
+   + Android Developers 교수님 코드, 문서, ChatGPT
 - 수업내용에서 차용한 것
     + Framework
 - 직접 개발한 것
