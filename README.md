@@ -5,6 +5,12 @@
 
 ![](READMEImg/메인이미지.jpg)
 
+## 영상
+
+['시연영상'](https://youtu.be/A88vwp0AARU)
+
+['발표영상'](https://youtu.be/A88vwp0AARU)
+
 ## 게임 컨셉
 모티브 게임: Nintendo DS 리듬세상
 
